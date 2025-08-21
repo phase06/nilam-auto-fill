@@ -1,0 +1,273 @@
+/* NILAM Auto-Filler Extension Styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 14px;
+  color: #333;
+  background-color: #f8f9fa;
+  width: 400px;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+/* Tab Navigation */
+.tab-nav {
+  display: flex;
+  border-bottom: 2px solid #dee2e6;
+  margin-bottom: 15px;
+}
+
+.tab-link {
+  padding: 10px 15px;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  font-size: 15px;
+  font-weight: 500;
+  color: #6c757d;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -2px;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.tab-link:hover {
+  color: #495057;
+}
+
+.tab-link.active {
+  color: #0d6efd;
+  border-bottom-color: #0d6efd;
+}
+
+/* Tab Content */
+.tab-content {
+  display: none;
+  flex-grow: 1;
+  flex-direction: column;
+}
+
+.tab-content.active {
+  display: flex;
+}
+
+.tab-header {
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tab-header h3 {
+  margin: 0;
+  font-size: 18px;
+  color: #333;
+}
+
+/* Form Styles */
+#profile-form {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.form-group {
+  margin-bottom: 12px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 500;
+  color: #555;
+}
+
+input[type="text"],
+input[type="number"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+  font-size: 14px;
+  box-sizing: border-box;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+textarea:focus {
+  outline: none;
+  border-color: #86b7fe;
+  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+
+textarea {
+  resize: vertical;
+  flex-grow: 1;
+}
+
+/* Button Styles */
+.button-group {
+  display: flex;
+  gap: 10px;
+  margin-top: auto; /* Pushes buttons to the bottom */
+  padding-top: 10px;
+}
+
+button {
+  flex: 1;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+#save-btn, #fill-btn {
+  background-color: #0d6efd;
+  color: white;
+}
+
+#save-btn:hover, #fill-btn:hover {
+  background-color: #0b5ed7;
+}
+
+#refresh-btn, #auth-btn, #clear-auth-btn {
+  background-color: #6c757d;
+  color: white;
+  flex: none; /* Don't let these buttons grow */
+}
+
+#refresh-btn:hover, #auth-btn:hover, #clear-auth-btn:hover {
+  background-color: #5c636a;
+}
+
+#fill-btn:disabled {
+  background-color: #adb5bd;
+  cursor: not-allowed;
+}
+
+/* Data List */
+.data-list {
+  flex-grow: 1;
+  overflow-y: auto;
+  border: 1px solid #dee2e6;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+.data-item {
+  padding: 12px;
+  border-bottom: 1px solid #f0f0f0;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  position: relative;
+}
+
+.data-item:last-child {
+  border-bottom: none;
+}
+
+.data-item:hover {
+  background-color: #f8f9fa;
+}
+
+.data-item.selected {
+  background-color: #e9f2ff;
+  border-left: 4px solid #0d6efd;
+  padding-left: 8px;
+}
+
+.data-item.filled {
+  background-color: #f1f8e9;
+  color: #666;
+}
+
+.data-item.filled::after {
+  content: "✓ Filled";
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 12px;
+  color: #28a745;
+  font-weight: 600;
+}
+
+.data-item-title {
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 4px;
+}
+
+.data-item-author {
+  font-size: 13px;
+  color: #666;
+}
+
+/* Config Section */
+.config-section {
+  padding: 15px;
+  border: 1px solid #dee2e6;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+/* Status Messages */
+.status-message, .auth-status {
+  margin-top: 10px;
+  padding: 8px 12px;
+  border-radius: 5px;
+  font-size: 13px;
+  text-align: center;
+  min-height: 18px;
+}
+
+.auth-status {
+  border: 1px solid transparent;
+}
+
+.auth-status.authorized {
+  background-color: #d1e7dd;
+  color: #0f5132;
+  border-color: #badbcc;
+}
+
+.auth-status.error {
+  background-color: #f8d7da;
+  color: #842029;
+  border-color: #f5c2c7;
+}
+
+.status-message.success {
+  background-color: #d1e7dd;
+  color: #0f5132;
+}
+
+.status-message.error {
+  background-color: #f8d7da;
+  color: #842029;
+}
+
+.status-message.info {
+  background-color: #cff4fc;
+  color: #055160;
+}
+
+/* Placeholder styling */
+::placeholder {
+  color: #999;
+  opacity: 1;
+}
