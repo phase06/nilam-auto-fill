@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NILAM Auto-Filler</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <div class="tab-nav">
+      <button class="tab-link active" data-tab="fill-form-tab">Fill Form</button>
+      <button class="tab-link" data-tab="save-data-tab">Save Data</button>
+      <button class="tab-link" data-tab="config-tab">Configuration</button>
+    </div>
+
+    <!-- Fill Form Tab -->
+    <div id="fill-form-tab" class="tab-content active">
+      <div class="tab-header">
+        <h3>Select Data to Fill</h3>
+        <button type="button" id="refresh-btn">Refresh</button>
+      </div>
+      <div id="data-list" class="data-list">
+        <!-- Data entries will be populated here -->
+      </div>
+      <div class="button-group">
+        <button type="button" id="fill-btn" disabled>Fill Selected on Page</button>
+        <button type="button" id="fill-all-btn" disabled>Fill All New</button>
+      </div>
+    </div>
+
+    <!-- Save Data Tab -->
+    <div id="save-data-tab" class="tab-content">
+      <div class="tab-header">
+        <h3>Add New Book Record</h3>
+      </div>
+      <form id="profile-form">
+        <div class="form-group">
+          <label for="book-title">Book Title:</label>
+          <input type="text" id="book-title" name="book-title" placeholder="Enter book title">
+        </div>
+        <div class="form-group">
+          <label for="author">Author:</label>
+          <input type="text" id="author" name="author" placeholder="Enter author name">
+        </div>
+        <div class="form-group">
+          <label for="publisher">Publisher:</label>
+          <input type="text" id="publisher" name="publisher" placeholder="Enter publisher">
+        </div>
+        <div class="form-group">
+          <label for="year">Year Published:</label>
+          <input type="number" id="year" name="year" placeholder="Enter year" min="1000" max="9999">
+        </div>
+        <div class="form-group">
+          <label for="summary">Summary:</label>
+          <textarea id="summary" name="summary" rows="4" placeholder="Enter book summary or synopsis"></textarea>
+        </div>
+        <div class="button-group">
+          <button type="button" id="save-btn">Save to Sheet</button>
+        </div>
+      </form>
+    </div>
+
+    <!-- Configuration Tab -->
+    <div id="config-tab" class="tab-content">
+      <div class="tab-header">
+        <h3>Google Sheets Configuration</h3>
+      </div>
+      <div class="config-section">
+        <div class="form-group">
+          <label for="sheet-id">Google Sheet ID:</label>
+          <input type="text" id="sheet-id" name="sheet-id" placeholder="Enter your Google Sheet ID">
+        </div>
+        <button type="button" id="auth-btn">Authorize Google Sheets</button>
+        <button type="button" id="clear-auth-btn" style="display: none;">Clear Auth & Retry</button>
+        <div id="auth-status" class="auth-status"></div>
+      </div>
+    </div>
+    
+    <div id="status-message" class="status-message"></div>
+  </div>
+  
+  <script src="google-sheets.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>

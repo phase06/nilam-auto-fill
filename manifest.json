@@ -1,0 +1,35 @@
+{
+  "manifest_version": 3,
+  "name": "NILAM Form Auto-Filler",
+  "version": "1.1",
+  "description": "Save book details and automatically fill the NILAM data entry form with one click.",
+  "permissions": [
+    "storage",
+    "scripting",
+    "activeTab",
+    "identity"
+  ],
+  "host_permissions": [
+    "*://ains.moe.gov.my/*",
+    "https://sheets.googleapis.com/*"
+  ],
+  "oauth2": {
+    "client_id": "935338178390-hbhic7dkkpsc8gl95a8o1p6tpurc5nuf.apps.googleusercontent.com",
+    "scopes": [
+      "https://www.googleapis.com/auth/spreadsheets"
+    ]
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "images/icon16.png",
+      "48": "images/icon48.png",
+      "128": "images/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "images/icon16.png",
+    "48": "images/icon48.png",
+    "128": "images/icon128.png"
+  }
+}
